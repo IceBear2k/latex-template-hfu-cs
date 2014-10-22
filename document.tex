@@ -1,0 +1,73 @@
+% Initial settings
+\input{inc/settings}
+
+% About the paper
+\newcommand{\artderarbeit}{[Art der Arbeit]}
+\newcommand{\studiengang}{[Studiengang]}
+\newcommand{\titel}{[Titel der Arbeit]}
+\newcommand{\untertitel}{[Untertitel der Arbeit]}
+\newcommand{\referent}{[Name]}
+\newcommand{\koreferent}{[Name]}
+\newcommand{\vorgelegtam}{[Datum]}
+\newcommand{\studentname}{[Name]}
+\newcommand{\studentnr}{[Matrikelnummer]}
+\newcommand{\studentstr}{[Straße und Hausnummer]}
+\newcommand{\studentstadt}{[PLZ und Stadt]}
+\newcommand{\studentemail}{[HFU-Emailadresse]}
+
+\begin{document}
+	% Title page
+	\include{inc/titlepage}
+
+	% Geometry settings for following content
+	\newgeometry{top=3cm,bottom=2cm,inner=2.5cm,outer=2.5cm,bindingoffset=1.5cm}
+
+	% Reset page counter
+	\setcounter{page}{1}
+
+	% Preamble (optional)
+	\include{inc/preamble}
+
+	% Abstract
+	\include{inc/abstract}
+
+	% Table of contents
+	\include{inc/toc}
+
+	% List of figures (required if applicable)
+	\include{inc/lof}
+
+	% List of tables (required if applicable)
+	\include{inc/lot}
+
+	% List of acronyms (optional)
+	\include{inc/loa}
+
+	% Reset page counter and page style
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	\thispagestyle{plain}
+	\pagestyle{plain}
+
+	% Actual content
+	\include{content/01chapter}
+	\include{content/02chapter}
+
+	\cleardoubleemptypage
+
+	% Bibliography
+	\include{inc/bibliography}
+
+	% Oath
+	\include{inc/oath}
+
+	% Additional documents (optional)
+	%
+
+	% Reset page counter
+	\setcounter{page}{1}
+
+	% Attachments (optional)
+	%
+
+\end{document}

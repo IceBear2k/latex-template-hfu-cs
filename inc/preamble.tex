@@ -1,0 +1,17 @@
+%!TEX root = ../document.tex
+
+\addcontentsline{toc}{chapter}{Vorwort}
+\fancypagestyle{preamble}{
+	\fancyhf{}
+        \fancyhfoffset[LR]{0cm}
+        \fancyhead[LE,RO]{\fontsize{12pt}{0pt}\textbf\thepage}
+        \fancyhead[LO,RE]{\fontsize{12pt}{0pt}\textbf{Vorwort}}
+}
+
+\chapter*{Vorwort}
+	\thispagestyle{preamble}
+	\pagestyle{preamble}
+
+	\lipsum[1]
+
+\cleardoubleemptypage

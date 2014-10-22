@@ -1,0 +1,115 @@
+%!TEX root = ../document.tex
+
+% Document settings
+\documentclass[
+	12pt,
+	a4paper,
+	ngerman,
+	twoside,
+	abstracton,
+	parskip=half,
+	openright,
+	fleqn,
+	bibliography=totoc,
+	final,
+]{scrreprt}
+
+% Geometry settings (initial for title page only, see document.tex for actual document formatting)
+\usepackage[
+	a4paper,
+	portrait,
+	bindingoffset=0cm,
+	inner=2.5cm,
+	outer=2.5cm,
+	top=2cm,
+	bottom=3cm,
+	includeheadfoot,
+]{geometry}
+
+% References and quotation
+\usepackage[
+	backend=biber,
+	bibwarn=true,
+	bibencoding=utf8,
+	sortlocale=de_DE,
+	style=alphabetic,
+]{biblatex}
+\addbibresource{document.bib}
+
+% Localization
+\usepackage[ngerman]{babel}
+
+% Euro symbol
+\usepackage[right]{eurosym}
+
+% Encoding
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Line spacing
+\usepackage[onehalfspacing]{setspace}
+
+% Graphics
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage[export]{adjustbox}
+
+% Colors
+\usepackage{color,fancyvrb}
+
+% Float
+\usepackage{float}
+
+% Font
+\usepackage{mathptmx}
+
+% Widows and orphans
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+\usepackage[titles]{tocloft}
+\renewcommand\cftchapdotsep{1}
+
+% Header and Footer
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyhfoffset[LR]{0cm}
+	\fancyhead[LE,RO]{\fontsize{12pt}{0pt}\textbf\thepage}
+	\fancyhead[LO,RE]{\fontsize{12pt}{0pt}\textbf\leftmark}
+}
+\pagestyle{plain}
+\renewcommand{\chaptermark}[1]{
+	\markboth{\thechapter\ #1}{}
+}
+
+% Lorem ipsum
+\usepackage{lipsum}
+
+% Title formatting
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{}{\fontsize{14pt}{0pt}\textbf\thechapter\quad}{0pt}{\fontsize{14pt}{0pt}\textbf}
+\titleformat{\section}[hang]{}{\fontsize{12pt}{0pt}\textbf\thesection\quad}{0pt}{\fontsize{12pt}{0pt}\textbf}
+\titleformat{\subsection}[hang]{}{\fontsize{12pt}{0pt}\selectfont\thesubsection\quad}{0pt}{\fontsize{12pt}{0pt}\selectfont}
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+% Acronyms
+\usepackage[
+	acronym,
+	nomain,
+	toc,
+]{glossaries}
+\makeglossaries
+
+% Provide further compatibility
+\usepackage{scrhack}
+
+% Quotations
+\usepackage{csquotes}
+
+% Start page numbering
+\pagenumbering{Roman}
+\setcounter{page}{1}
